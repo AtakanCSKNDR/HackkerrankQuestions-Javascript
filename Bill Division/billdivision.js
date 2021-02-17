@@ -1,12 +1,11 @@
 let bill = [3, 10, 2, 9];
 let indexOfAnnaDoesNotEat = 1;
-let contributedOfAnna = 12;
+let contributedOfAnna = 7;
 
 function bonAppetit(bill, k, b) {
-  let total = 0;
   bill.splice(k, 1);
-  bill.forEach((element) => (total += element));
-  total / 2 != b ? console.log(b - total / 2) : console.log("Bon Appetit");
+  var total = bill.reduce(function (a, b) {return a + b;}, 0) / 2;
+  total != b ? console.log(b - total) : console.log("Bon Appetit");
 }
 
 bonAppetit(bill, indexOfAnnaDoesNotEat, contributedOfAnna);
